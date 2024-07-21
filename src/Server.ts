@@ -46,8 +46,8 @@ import { tsedConfig } from "./config/tsed";
 })
 export class Server {
   @Inject()
-  protected app: PlatformApplication;
+  protected app!: PlatformApplication;
 
   @Configuration()
-  protected settings: Configuration;
+  protected settings!: Configuration;
 }

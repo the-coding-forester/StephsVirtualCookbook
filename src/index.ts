@@ -12,11 +12,18 @@ async function bootstrap() {
       platform.stop();
     });
   } catch (error) {
-    $log.error({
-      event: "SERVER_BOOTSTRAP_ERROR",
-      message: error.message,
-      stack: error.stack,
-    });
+    if (error instanceof Error) {
+      $log.error({
+        event: "SERVER_BOOTSTRAP_ERROR",
+        message: error.message,
+        stack: error.stack,
+      });
+    } else {
+      $log.error({
+        event: "UNKNOWN_SERVER_BOOTSTRAP_ERROR",
+        error,
+      });
+    }
   }
 }
 

@@ -8,7 +8,7 @@ import { SwaggerSettings } from "@tsed/swagger";
 @Controller("/")
 export class DocsController {
   @Constant("swagger", [])
-  private swagger: SwaggerSettings[];
+  private swagger!: SwaggerSettings[];
 
   @Get("/")
   @View("swagger.ejs")
