@@ -52,6 +52,7 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@tsed/cli-plugin-eslint": "5.0.2",
     "@tsed/cli-plugin-mocha": "5.0.2",
     "@tsed/cli-plugin-typeorm": "5.0.2",
@@ -70,7 +71,7 @@
     "@types/supertest": "^6.0.2",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
-    "chai": "^5.1.0",
+    "chai": "^4.4.0",
     "chai-as-promised": "^7.1.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
