@@ -6,7 +6,7 @@ import { SwaggerSettings } from "@tsed/swagger";
 
 @Hidden()
 @Controller("/")
-export class IndexController {
+export class DocsController {
   @Constant("swagger", [])
   private swagger: SwaggerSettings[];
 

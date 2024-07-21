@@ -7,12 +7,11 @@ import { Configuration, Inject } from "@tsed/di";
 import "@tsed/platform-express";
 import "@tsed/swagger";
 
-import * as pages from "./controllers/pages/index";
-import * as rest from "./controllers/rest/index";
-import config from "./config/index";
+import { DocsController } from "./app";
+import { tsedConfig } from "./config/tsed";
 
 @Configuration({
-  ...config,
+  ...tsedConfig,
   acceptMimes: ["application/json"],
   httpPort: process.env.PORT || 8083,
   httpsPort: false,
@@ -21,8 +20,7 @@ import config from "./config/index";
     returnsCoercedValues: true,
   },
   mount: {
-    "/rest": [...Object.values(rest)],
-    "/": [...Object.values(pages)],
+    "/docs": [DocsController],
   },
   swagger: [
     {

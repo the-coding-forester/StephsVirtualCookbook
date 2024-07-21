@@ -1,6 +1,6 @@
 import { $log, DILoggerOptions } from "@tsed/common";
 
-import appConfig from "../envs";
+import { appConfig } from "./app";
 
 if (appConfig.isProduction) {
   $log.appenders.set("stdout", {

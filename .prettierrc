@@ -2,6 +2,7 @@
   "plugins": ["@trivago/prettier-plugin-sort-imports"],
   "experimentalTernaries": true,
   "importOrderSeparation": true,
+  "trailingComma": "all",
   "importOrderSortSpecifiers": true,
   "importOrderGroupNamespaceSpecifiers": true,
   "importOrder": ["^node:", "<THIRD_PARTY_MODULES>", "^[./]"],

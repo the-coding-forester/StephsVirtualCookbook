@@ -9,16 +9,16 @@ dotenv.config({
 export type Config = Readonly<{
   isProduction: boolean;
 
-  database: {
+  database: Readonly<{
     host: string;
     port: number;
     username: string;
     password: string;
     databaseName: string;
-  };
+  }>;
 }>;
 
-const config: Config = {
+export const appConfig: Config = {
   isProduction: process.env.NODE_ENV === "production",
 
   database: {
@@ -29,5 +29,3 @@ const config: Config = {
     databaseName: env.get("DB_NAME").required().asString(),
   },
 };
-
-export default config;
