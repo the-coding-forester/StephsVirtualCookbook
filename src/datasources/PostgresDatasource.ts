@@ -1,6 +1,6 @@
-import {registerProvider} from "@tsed/di";
-import {DataSource} from "typeorm";
-import {Logger} from "@tsed/logger";
+import { registerProvider } from "@tsed/di";
+import { DataSource } from "typeorm";
+import { Logger } from "@tsed/logger";
 
 export const POSTGRES_DATASOURCE = Symbol.for("PostgresDatasource");
 export const PostgresDatasource = new DataSource({
@@ -10,7 +10,7 @@ export const PostgresDatasource = new DataSource({
   port: 5432,
   username: "test",
   password: "test",
-  database: "test"
+  database: "test",
 });
 
 registerProvider<DataSource>({
@@ -27,6 +27,6 @@ registerProvider<DataSource>({
   hooks: {
     $onDestroy(dataSource) {
       return dataSource.isInitialized && dataSource.close();
-    }
-  }
+    },
+  },
 });
