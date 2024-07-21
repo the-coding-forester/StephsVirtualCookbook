@@ -13,7 +13,7 @@ import { tsedConfig } from "./config/tsed";
 @Configuration({
   ...tsedConfig,
   acceptMimes: ["application/json"],
-  httpPort: process.env.PORT || 8083,
+  httpPort: process.env.PORT || 8080,
   httpsPort: false,
   disableComponentsScan: true,
   ajv: {
