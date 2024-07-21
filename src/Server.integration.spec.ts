@@ -1,10 +1,12 @@
 import { PlatformTest } from "@tsed/common";
-import SuperTest from "supertest";
 import { expect } from "chai";
+import SuperTest from "supertest";
+import TestAgent from "supertest/lib/agent";
+
 import { Server } from "./Server";
 
 describe("Server", () => {
-  let request: SuperTest.SuperTest<SuperTest.Test>;
+  let request: TestAgent<SuperTest.Test>;
 
   beforeEach(PlatformTest.bootstrap(Server));
   beforeEach(() => {

@@ -1,6 +1,33 @@
+import * as env from "env-var";
 import dotenv from "dotenv-flow";
 
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+dotenv.config({
+  node_env: process.env.NODE_ENV,
+  default_node_env: "dev",
+});
 
-export const config = dotenv.config();
-export const isProduction = process.env.NODE_ENV === "production";
+export type Config = Readonly<{
+  isProduction: boolean;
+
+  database: {
+    host: string;
+    port: number;
+    username: string;
+    password: string;
+    databaseName: string;
+  };
+}>;
+
+const config: Config = {
+  isProduction: process.env.NODE_ENV === "production",
+
+  database: {
+    host: env.get("DB_HOST").required().asString(),
+    port: env.get("DB_PORT").default(5432).asIntPositive(),
+    username: env.get("DB_USER").required().asString(),
+    password: env.get("DB_PASSWORD").required().asString(),
+    databaseName: env.get("DB_NAME").required().asString(),
+  },
+};
+
+export default config;

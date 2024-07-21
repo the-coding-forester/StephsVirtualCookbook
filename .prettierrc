@@ -1,3 +1,9 @@
 {
-  "experimentalTernaries": true
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "experimentalTernaries": true,
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderGroupNamespaceSpecifiers": true,
+  "importOrder": ["^node:", "<THIRD_PARTY_MODULES>", "^[./]"],
+  "importOrderParserPlugins": ["typescript", "decorators-legacy"]
 }

@@ -1,8 +1,9 @@
-import { expect } from "chai";
 import { PlatformTest } from "@tsed/common";
+import { expect } from "chai";
 import SuperTest from "supertest";
-import { HelloWorldController } from "./HelloWorldController";
+
 import { Server } from "../../Server";
+import { HelloWorldController } from "./HelloWorldController";
 
 describe("HelloWorldController", () => {
   let request: SuperTest.Agent;

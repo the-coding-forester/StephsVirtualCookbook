@@ -1,18 +1,21 @@
-import { join } from "path";
-import { Configuration, Inject } from "@tsed/di";
-import { PlatformApplication } from "@tsed/common";
-import "@tsed/platform-express"; // /!\ keep this import
+import { join } from "node:path";
+
+// /!\ keep this import
 import "@tsed/ajv";
+import { PlatformApplication } from "@tsed/common";
+import { Configuration, Inject } from "@tsed/di";
+import "@tsed/platform-express";
 import "@tsed/swagger";
-import { config } from "./config/index";
-import * as rest from "./controllers/rest/index";
+
 import * as pages from "./controllers/pages/index";
+import * as rest from "./controllers/rest/index";
+import config from "./config/index";
 
 @Configuration({
   ...config,
   acceptMimes: ["application/json"],
   httpPort: process.env.PORT || 8083,
-  httpsPort: false, // CHANGE
+  httpsPort: false,
   disableComponentsScan: true,
   ajv: {
     returnsCoercedValues: true,
@@ -23,7 +26,7 @@ import * as pages from "./controllers/pages/index";
   },
   swagger: [
     {
-      path: "/doc",
+      path: "/docs",
       specVersion: "3.0.1",
     },
   ],

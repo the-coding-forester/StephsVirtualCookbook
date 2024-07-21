@@ -1,5 +1,6 @@
-import { expect } from "chai";
 import { PlatformTest } from "@tsed/common";
+import { expect } from "chai";
+
 import { HelloWorldController } from "./HelloWorldController";
 
 describe("HelloWorldController", () => {
