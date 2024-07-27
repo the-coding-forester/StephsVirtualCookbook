@@ -1,23 +1,22 @@
 {
   "parser": "@typescript-eslint/parser",
-  "extends": [
-    "prettier",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "plugins": ["@typescript-eslint"],
+  "extends": ["prettier", "plugin:@typescript-eslint/recommended"],
+  "plugins": ["@typescript-eslint", "unused-imports"],
   "parserOptions": {
     "ecmaVersion": 2018,
     "sourceType": "module",
     "project": "./tsconfig.json"
   },
   "env": {
-   "node": true,
-   "es6": true
+    "node": true,
+    "es6": true
   },
   "rules": {
     "@typescript-eslint/no-inferrable-types": 0,
     "@typescript-eslint/no-unused-vars": 2,
-    "@typescript-eslint/no-var-requires": 0
+    "@typescript-eslint/no-var-requires": 0,
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": "off"
   },
   "ignorePatterns": ["processes.config.js"]
 }

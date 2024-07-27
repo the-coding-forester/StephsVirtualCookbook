@@ -15,7 +15,8 @@
     "typeorm": "typeorm-ts-node-commonjs",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
-    "format": "prettier '**/*.{ts,js,json,md,yml,yaml}' --write",
+    "lint:all": "npm run lint:fix && npm run format",
+    "format": "prettier '{src/**,views/**,scripts/**,.}/*.{ts,js,json,md,yml,yaml}' --write",
     "prepare": "husky",
     "postinstall": "npm run init"
   },
@@ -81,6 +82,7 @@
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-unused-imports": "^3.2.0",
     "husky": "^9.1.1",
     "is-ci": "^3.0.1",
     "lint-staged": "^15.2.7",
